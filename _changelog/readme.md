@@ -1,0 +1,37 @@
+# Changelog
+
+## 13/10/25
+
+Vandaag heb ik ervoor gezorgd dat er verschil is tussen wat een ingelogde en uitgelogde gebruiker ziet op de status
+pagina.
+
+## User Stories
+
+### Gebruiker <br>
+
+Must have:
+<br> 1. Als gebruiker wil ik een overzicht van K-pop groepen hebben zodat ik nieuwe groepen kan ontdekken.
+<br> 2. Als gebruiker wil ik de details van groepen zien zodat ik meer te weten kan komen over de verschillende groepen.
+
+Should have:
+<br> 3. Als gebruiker wil ik groepen kunnen toevoegen aan mijn favorieten zodat ik snel deze groepen weer terug kan
+vinden.
+<br> 4. Als gebruiker wil ik filters gebruiken tijdens het zoeken zodat ik sneller groepen kan vinden.
+
+Could have:
+<br> 5. Als gebruiker wil ik K-pop groepen kunnen toevoegen en bewerken zodat de site het meest accuraat is.
+<br> 6. Als gebruiker wil ik mijn profiel kunnen bewerken zodat ik mijn account kan personaliseren.
+
+### Admin <br>
+
+Must have:
+<br> 1. Als admin wil ik nieuwe K-pop groepen kunnen toevoegen aan de database zodat de site up-to-date blijft.
+<br> 2. Als admin wil ik gebruikers kunnen beheren zodat ik mijn website netjes en beschaafd kan houden.
+<br> 3. Als admin wil ik groepen kunnen bewerken of verwijderen zodat de site helemaal bij blijft.
+
+Should have:
+<br> 4. Als admin wil ik de acties van gebruikers beheren zodat er geen rare dingen op de site komen te staan.
+
+## ERD
+
+![ERD.png](images/ERD.png)

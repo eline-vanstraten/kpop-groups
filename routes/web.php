@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,29 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+Route::get('/contact', function () {
+    $name = 'hello';
+//    return view('contact', [
+//        'name' => $name]);
+    return view('contact', compact('name'));
+})->name('contact');
+
+Route::get('groups/{id}', function (int $id) {
+    return view('groups', compact('id'));
+})->name('groups');
+
+Route::get('homepage/{id}', function (int $id) {
+    return view('homepage', compact('id'));
+})->name('homepage');
+
+Route::get('/status', function () {
+    return view('status');
+})->name('status');
+
+Route::get('/favorites', function () {
+    return view('favorites');
+})->name('favorites');
+
+Route::resource('groups', GroupController::class);
+
+require __DIR__ . '/auth.php';
