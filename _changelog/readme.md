@@ -1,5 +1,11 @@
 # Changelog
 
+## 14/10/25
+
+Vandaag heb ik een migration toegevoegd. De bijbehorende tabel is groups. Hier heb ik dummy data aan toegevoegd.
+Ook heb ik een model toegevoegd: group, en deze getoond in de view.<br>
+Daarnaast heb ik een navigatie balk toegevoegd en heb ik een nieuwe verbeterde versie van mijn ERD toegevoegd.
+
 ## 13/10/25
 
 Vandaag heb ik ervoor gezorgd dat er verschil is tussen wat een ingelogde en uitgelogde gebruiker ziet op de status

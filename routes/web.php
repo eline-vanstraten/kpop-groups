@@ -18,19 +18,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/contact', function () {
-    $name = 'hello';
-//    return view('contact', [
-//        'name' => $name]);
-    return view('contact', compact('name'));
-})->name('contact');
 
 Route::get('groups/{id}', function (int $id) {
     return view('groups', compact('id'));
 })->name('groups');
 
-Route::get('homepage/{id}', function (int $id) {
-    return view('homepage', compact('id'));
+Route::get('/homepage', function () {
+    return view('homepage');
 })->name('homepage');
 
 Route::get('/status', function () {
