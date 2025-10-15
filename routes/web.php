@@ -19,9 +19,9 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('groups/{id}', function (int $id) {
-    return view('groups', compact('id'));
-})->name('groups');
+//Route::get('groups/{id}', function (int $id) {
+//    return view('groups', compact('id'));
+//})->name('groups');
 
 Route::get('/homepage', function () {
     return view('homepage');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -31,7 +32,9 @@ class GroupController extends Controller
      */
     public function create()
     {
-        //
+
+        $types = Type::all();
+        return view('groups.create', compact('types'));
     }
 
     /**
@@ -39,7 +42,32 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $request->validate([
+            'name' => ['required', 'string'],
+            'type_id' => ['required', 'exists:types,id'],
+            'debut_date' => ['required', 'date'],
+            'number_of_members' => ['required', 'integer'],
+            'name_of_members' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'image' => ['required', 'string'],
+
+        ]);
+
+        $group = new Group();
+
+        $group->name = $request->input('name');
+        $group->type_id = $request->input('type_id');
+        $group->debut_date = $request->input('debut_date');
+        $group->number_of_members = $request->input('number_of_members');
+        $group->name_of_members = $request->input('name_of_members');
+        $group->description = $request->input('description');
+        $group->image = $request->input('image');
+
+        $group->save();
+
+        return redirect()->route('groups.index')->with('success', 'Group added');
     }
 
     /**
