@@ -3,7 +3,8 @@
 ## 17/10/25
 
 Vandaag heb ik de edit gemaakt waardoor je de informatie van groups kan aanpassen en je wijzigingen kan opslaan. <br>
-Daarnaast heb ik de knop toegevoegd waarmee je groepen kan verwijderen.
+Daarnaast heb ik de knop toegevoegd waarmee je groepen kan verwijderen. <br>
+Ook heb ik de tabel voor agencies aan gemaakt en deze verbonden met de groups tabel.
 
 ## 15/10/25
 
