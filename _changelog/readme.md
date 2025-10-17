@@ -1,8 +1,12 @@
 # Changelog
 
+## 17/10/25
+
+Vandaag heb ik de edit gemaakt waardoor je de informatie van groups kan aanpassen en je wijzigingen kan opslaan.
+
 ## 15/10/25
 
-Vandaag heb ik de create gemaakt om groupen toe te voegen en daarbij een form. <br>
+Vandaag heb ik de create gemaakt om groups toe te voegen en daarbij een form. <br>
 Ook heb ik een nieuwe tabel: types, toegevoegd en deze met relaties aan de groups gekoppeld. <br>
 Je kunt nu dus nieuwe groepen toevoegen aan de database en daarbij het bijbehorende type kiezen.
 

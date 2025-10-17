@@ -76,7 +76,6 @@ class GroupController extends Controller
     public function show(string $id)
     {
         $group = Group::find($id);
-
         return view('groups.show', compact('group'));
     }
 
@@ -90,7 +89,9 @@ class GroupController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $group = Group::find($id);
+        $types = Type::all();
+        return view('groups.edit', compact('group'), compact('types'));
     }
 
     /**
@@ -98,7 +99,29 @@ class GroupController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string'],
+            'type_id' => ['required', 'exists:types,id'],
+            'debut_date' => ['required', 'date'],
+            'number_of_members' => ['required', 'integer'],
+            'name_of_members' => ['required', 'string'],
+            'description' => ['required', 'string'],
+            'image' => ['required', 'string'],
+        ]);
+
+        $group = Group::findOrFail($id);
+
+        $group->name = $request->input('name');
+        $group->type_id = $request->input('type_id');
+        $group->debut_date = $request->input('debut_date');
+        $group->number_of_members = $request->input('number_of_members');
+        $group->name_of_members = $request->input('name_of_members');
+        $group->description = $request->input('description');
+        $group->image = $request->input('image');
+
+        $group->save();
+        return redirect()->route('groups.show', $group->id)->with('success', 'Group Updated');
+
     }
 
     /**
@@ -106,6 +129,7 @@ class GroupController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $group = Group::findOrFail($id);
+        
     }
 }
