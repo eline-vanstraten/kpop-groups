@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Group;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use function Pest\Laravel\delete;
 
 class GroupController extends Controller
 {
@@ -130,6 +131,9 @@ class GroupController extends Controller
     public function destroy(string $id)
     {
         $group = Group::findOrFail($id);
-        
+        $group->delete();
+
+        return redirect()->route('groups.index', compact('group'))->with('success', 'Group Deleted');
+
     }
 }
