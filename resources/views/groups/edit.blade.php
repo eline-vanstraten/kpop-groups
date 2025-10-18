@@ -27,6 +27,20 @@
             </select>
         </div>
         <div>
+            <label for="agency_id">Agency</label>
+            <select name="agency_id" id="agency_id">
+                @foreach($agencies as $agency)
+                    <option
+                        {{--zet id van voorheen gekozen type neer --}}
+                        value="{{$agency->id}}"
+                        {{--checkt of de gekozen type_id in group tabel gelijk is aan de id van de type tabel.
+                        Waar--> de geselecteerde wordt laten zien dus die al voorheen gekozen is
+                        Niet waar--> de standaard optie word laten zien--}}
+                        {{$group->agency_id == $agency->id ? 'selected' : ''}}>{{$agency->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
             <label for="debut_date">Debut date</label>
             <input type="date" id="debut_date" name="debut_date" value="{{$group->debut_date}}">
         </div>

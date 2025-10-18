@@ -1,5 +1,10 @@
 # Changelog
 
+## 18/10/25
+
+Ik heb agency toegevoegd aan mijn create en edit pagina waardoor de gebruiker nu de belangrijkste info kan toevoegen en
+bewerken van de groepen.
+
 ## 17/10/25
 
 Vandaag heb ik de edit gemaakt waardoor je de informatie van groups kan aanpassen en je wijzigingen kan opslaan. <br>

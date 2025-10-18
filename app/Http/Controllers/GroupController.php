@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agency;
 use App\Models\Group;
 use App\Models\Type;
 use Illuminate\Http\Request;
@@ -35,7 +36,8 @@ class GroupController extends Controller
     {
 
         $types = Type::all();
-        return view('groups.create', compact('types'));
+        $agencies = Agency::all();
+        return view('groups.create', compact('types', 'agencies'));
     }
 
     /**
@@ -48,6 +50,7 @@ class GroupController extends Controller
         $request->validate([
             'name' => ['required', 'string'],
             'type_id' => ['required', 'exists:types,id'],
+            'agency_id' => ['required', 'exists:agencies,id'],
             'debut_date' => ['required', 'date'],
             'number_of_members' => ['required', 'integer'],
             'name_of_members' => ['required', 'string'],
@@ -60,6 +63,7 @@ class GroupController extends Controller
 
         $group->name = $request->input('name');
         $group->type_id = $request->input('type_id');
+        $group->agency_id = $request->input('agency_id');
         $group->debut_date = $request->input('debut_date');
         $group->number_of_members = $request->input('number_of_members');
         $group->name_of_members = $request->input('name_of_members');
@@ -92,7 +96,8 @@ class GroupController extends Controller
     {
         $group = Group::find($id);
         $types = Type::all();
-        return view('groups.edit', compact('group'), compact('types'));
+        $agencies = Agency::all();
+        return view('groups.edit', compact('group', 'types', 'agencies'));
     }
 
     /**
@@ -103,6 +108,7 @@ class GroupController extends Controller
         $request->validate([
             'name' => ['required', 'string'],
             'type_id' => ['required', 'exists:types,id'],
+            'agency_id' => ['required', 'exists:agencies,id'],
             'debut_date' => ['required', 'date'],
             'number_of_members' => ['required', 'integer'],
             'name_of_members' => ['required', 'string'],
@@ -114,6 +120,7 @@ class GroupController extends Controller
 
         $group->name = $request->input('name');
         $group->type_id = $request->input('type_id');
+        $group->agency_id = $request->input('agency_id');
         $group->debut_date = $request->input('debut_date');
         $group->number_of_members = $request->input('number_of_members');
         $group->name_of_members = $request->input('name_of_members');

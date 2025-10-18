@@ -21,6 +21,15 @@
             </select>
         </div>
         <div>
+            <label for="agency_id">Agency</label>
+            <select name="agency_id">
+                @foreach($agencies as $agency)
+                    {
+                    <option value="{{$agency->id}}">{{$agency->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
             <label for="debut_date">Debut date</label>
             <input type="date" id="debut_date" name="debut_date">
         </div>
