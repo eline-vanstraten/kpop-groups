@@ -143,4 +143,19 @@ class GroupController extends Controller
         return redirect()->route('groups.index', compact('group'))->with('success', 'Group Deleted');
 
     }
+
+    //search bar
+//    public function search(Request $request)
+//    {
+//
+//        $search = $request->input('search');
+//
+//        $groups = Group::query()
+//            ->where('name', 'LIKE', "%{$search}%")
+//            ->get();
+//
+//        return view('groups.index', compact('groups'));
+//
+//    }
 }
+

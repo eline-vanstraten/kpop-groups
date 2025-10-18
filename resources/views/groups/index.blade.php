@@ -1,6 +1,24 @@
 <x-app-layout>
     <h1>Groups</h1>
     <a href="{{route('groups.create')}}">Create</a>
+
+    {{--    <form action="{{route('groups.index')}}" method="GET">--}}
+    {{--        <input type="text" name="search">--}}
+    {{--        <button type="submit">Search</button>--}}
+    {{--    </form>--}}
+    {{--    @if($groups->isNotEmpty())--}}
+    {{--        @foreach($groups as $group)--}}
+    {{--            <div>--}}
+    {{--                <p>{{$group->name}}</p>--}}
+    {{--            </div>--}}
+    {{--        @endforeach--}}
+    {{--    @else--}}
+    {{--        <div>--}}
+    {{--            <h2>No groups found</h2>--}}
+    {{--        </div>--}}
+    {{--    @endif--}}
+
+
     <ul>
         @foreach($groups as $group)
             <li><a href="{{ route('groups.show', $group) }}">{{ $group->name }}</a></li>

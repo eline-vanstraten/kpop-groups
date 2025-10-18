@@ -3,7 +3,8 @@
 ## 18/10/25
 
 Ik heb agency toegevoegd aan mijn create en edit pagina waardoor de gebruiker nu de belangrijkste info kan toevoegen en
-bewerken van de groepen.
+bewerken van de groepen. <br>
+Daarnaast ben ik gaan kijken hoe ik in een zoekbalk kan zoeken op namnen van de groepen.
 
 ## 17/10/25
 

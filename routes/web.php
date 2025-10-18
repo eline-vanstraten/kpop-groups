@@ -37,4 +37,6 @@ Route::get('/favorites', function () {
 
 Route::resource('groups', GroupController::class);
 
+//Route::resource('search', GroupController::class);
+
 require __DIR__ . '/auth.php';
