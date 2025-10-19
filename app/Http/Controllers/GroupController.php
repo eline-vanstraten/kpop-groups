@@ -13,12 +13,23 @@ class GroupController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+
+        $search = $request->input('search');
+        $groups = collect();
+
+        if ($search) {
+            //% zorgt ervoor dat wanneer er tekst voor of na het woord staat het woord wel getoond wordt
+            $groups = Group::where('name', 'LIKE', '%' . $search . '%')->get();
+
+        }
+
 
 //        $group = Group::find(1);
 
-        $groups = Group::all();
+//        $groups = Group::all();
+
 //        dd($groups);
 
 
@@ -26,7 +37,7 @@ class GroupController extends Controller
 //        $group->name = 'CORTIS';
 //        $group->number_of_members = 5;
 //        $group->description = 'Martin, Play that beat';
-        return view('groups.index', compact('groups'));
+        return view('groups.index', compact('groups', 'search'));
     }
 
     /**

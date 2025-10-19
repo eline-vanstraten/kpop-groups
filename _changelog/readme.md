@@ -1,5 +1,9 @@
 # Changelog
 
+## 20/10/25
+
+Ik heb een werkende zoekfunctie waar je de groepen op naam kan zoeken.
+
 ## 18/10/25
 
 Ik heb agency toegevoegd aan mijn create en edit pagina waardoor de gebruiker nu de belangrijkste info kan toevoegen en
