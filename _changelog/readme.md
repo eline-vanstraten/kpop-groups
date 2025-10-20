@@ -2,13 +2,15 @@
 
 ## 20/10/25
 
-Ik heb een werkende zoekfunctie waar je de groepen op naam kan zoeken.
+Ik heb een werkende zoekfunctie waar je de groepen op naam kan zoeken. <br>
+Je ziet eerst alle groepen die er zijn. Zodra je een zoekterm hebt ingevuld krijg je alleen het antwoord te zien. Ook
+heb ik een group count toegevoegd dat aangeeft hoeveel groepen gevonden zijn.
 
 ## 18/10/25
 
 Ik heb agency toegevoegd aan mijn create en edit pagina waardoor de gebruiker nu de belangrijkste info kan toevoegen en
 bewerken van de groepen. <br>
-Daarnaast ben ik gaan kijken hoe ik in een zoekbalk kan zoeken op namnen van de groepen.
+Daarnaast ben ik gaan kijken hoe ik in een zoekbalk kan zoeken op namen van de groepen.
 
 ## 17/10/25
 
