@@ -1,6 +1,6 @@
 <x-app-layout>
     <h1>Edit group {{$group->name}}</h1>
-    <form method="POST" action="{{route('groups.update', $group->id)}}">
+    <form method="POST" action="{{route('groups.update', $group->id)}}" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div>
@@ -78,7 +78,7 @@
         @enderror
         <div>
             <label for="image">Image</label>
-            <input type="text" id="image" name="image" value="{{$group->image}}">
+            <input type="file" id="image" name="image" value="{{$group->image}}" accept="image/">
         </div>
         @error('image')
         <div class="text-red-500 text-sm mt-1 italic">

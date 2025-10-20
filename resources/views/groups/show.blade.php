@@ -6,7 +6,8 @@
     <p>{{$group->number_of_members}}</p>
     <p>{{$group->name_of_members}}</p>
     <p>{{$group->description}}</p>
-    <p>{{$group->image}}</p>
+    <img src="{{asset('storage/' . $group->image)}}" alt="{{$group->name}}">
+    {{--    <p>{{$group->image}}</p>--}}
     <div>
         {{--        <a href="{{route('groups.destroy', $group->id)}}">Delete</a>--}}
         <button form="delete-form">Delete</button>

@@ -1,6 +1,6 @@
 <x-app-layout>
     <h1>Create group</h1>
-    <form method="POST" action="{{route('groups.store')}}">
+    <form method="POST" action="{{route('groups.store')}}" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="name">Name</label>
@@ -66,8 +66,8 @@
         </div>
         @enderror
         <div>
-            <label for="image">Image</label>
-            <input type="text" id="image" name="image">
+            <label for="image">Upload image</label>
+            <input type="file" id="image" name="image" accept="image/">
         </div>
         @error('image')
         <div class="text-red-500 text-sm mt-1 italic">

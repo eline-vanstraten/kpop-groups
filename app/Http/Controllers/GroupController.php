@@ -75,7 +75,7 @@ class GroupController extends Controller
             'number_of_members' => ['required', 'integer'],
             'name_of_members' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'image' => ['required', 'string'],
+            'image' => ['required', 'image'],
 
         ]);
 
@@ -88,7 +88,11 @@ class GroupController extends Controller
         $group->number_of_members = $request->input('number_of_members');
         $group->name_of_members = $request->input('name_of_members');
         $group->description = $request->input('description');
-        $group->image = $request->input('image');
+//        $group->image = $request->input('image');
+
+
+        $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
+        $group->image = $nameOfFile; //to store the link to the image in the DB
 
         $group->save();
 
@@ -133,7 +137,7 @@ class GroupController extends Controller
             'number_of_members' => ['required', 'integer'],
             'name_of_members' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'image' => ['required', 'string'],
+            'image' => ['required', 'image'],
         ]);
 
         $group = Group::findOrFail($id);
@@ -145,7 +149,10 @@ class GroupController extends Controller
         $group->number_of_members = $request->input('number_of_members');
         $group->name_of_members = $request->input('name_of_members');
         $group->description = $request->input('description');
-        $group->image = $request->input('image');
+//        $group->image = $request->input('image');
+
+        $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
+        $group->image = $nameOfFile; //to store the link to the image in the DB
 
         $group->save();
         return redirect()->route('groups.show', $group->id)->with('success', 'Group Updated');
@@ -163,6 +170,6 @@ class GroupController extends Controller
         return redirect()->route('groups.index', compact('group'))->with('success', 'Group Deleted');
 
     }
-    
+
 }
 

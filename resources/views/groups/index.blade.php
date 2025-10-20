@@ -36,7 +36,8 @@
             <ul>
                 @foreach($groups as $group)
                     <li><a href="{{ route('groups.show', $group) }}">{{ $group->name }}</a></li>
-                    <p>{{ $group->image }}</p>
+                    {{--                    <p>{{ $group->image }}</p>--}}
+                    <img src="{{asset('storage/' . $group->image)}}" alt="{{$group->name}}">
                     <p>{{ $group->description }}</p>
                 @endforeach
             </ul>

@@ -6,7 +6,9 @@ Ik heb een werkende zoekfunctie waar je de groepen op naam kan zoeken. <br>
 Je ziet eerst alle groepen die er zijn. Zodra je een zoekterm hebt ingevuld krijg je alleen het antwoord te zien. Ook
 heb ik een group count toegevoegd dat aangeeft hoeveel groepen gevonden zijn.<br>
 Daarnaast heb ik ervoor gezorgd dat je je zoekopdracht kan filteren op agency en type. Hierdoor wordt het zoekproces nog
-accurater.
+accurater. <br>
+Ten slotte heb ik vandaag de functie toegevoegd dat je foto's kan toevoegen aan de groep. Deze kan je bij het aanmaken
+toevoegen en veranderen bij het wijzigen van de groep.
 
 ## 18/10/25
 
