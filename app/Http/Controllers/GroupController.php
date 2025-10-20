@@ -17,6 +17,9 @@ class GroupController extends Controller
     {
 
         $search = $request->input('search');
+        $agencyId = $request->input('agency_id');
+        $typeId = $request->input('type_id');
+
         $query = Group::query();
 
         if ($search !== '') {
@@ -24,14 +27,26 @@ class GroupController extends Controller
             $query->where('name', 'LIKE', '%' . $search . '%');;
         }
 
+        if (!empty($agencyId)) {
+            $query->where('agency_id', $agencyId);;
+        }
+
+        if (!empty($typeId)) {
+            $query->where('type_id', $typeId);;
+        }
+
+
         $groups = $query->get();
+
+        $agencies = Agency::all();
+        $types = Type::all();
 
 
 //        $groups = Group::all();
 
 //        dd($groups);
 
-        return view('groups.index', compact('groups', 'search'));
+        return view('groups.index', compact('groups', 'search', 'agencies', 'agencyId', 'types', 'typeId'));
     }
 
     /**
@@ -148,19 +163,6 @@ class GroupController extends Controller
         return redirect()->route('groups.index', compact('group'))->with('success', 'Group Deleted');
 
     }
-
-    //search bar
-//    public function search(Request $request)
-//    {
-//
-//        $search = $request->input('search');
-//
-//        $groups = Group::query()
-//            ->where('name', 'LIKE', "%{$search}%")
-//            ->get();
-//
-//        return view('groups.index', compact('groups'));
-//
-//    }
+    
 }
 
