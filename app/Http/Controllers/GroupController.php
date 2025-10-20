@@ -17,26 +17,20 @@ class GroupController extends Controller
     {
 
         $search = $request->input('search');
-        $groups = collect();
+        $query = Group::query();
 
-        if ($search) {
+        if ($search !== '') {
             //% zorgt ervoor dat wanneer er tekst voor of na het woord staat het woord wel getoond wordt
-            $groups = Group::where('name', 'LIKE', '%' . $search . '%')->get();
-
+            $query->where('name', 'LIKE', '%' . $search . '%');;
         }
 
+        $groups = $query->get();
 
-//        $group = Group::find(1);
 
 //        $groups = Group::all();
 
 //        dd($groups);
 
-
-//        $group = new Group();
-//        $group->name = 'CORTIS';
-//        $group->number_of_members = 5;
-//        $group->description = 'Martin, Play that beat';
         return view('groups.index', compact('groups', 'search'));
     }
 
