@@ -12,6 +12,7 @@
                 <select name="agency_id">
                     <option value="">All agencies</option>
                     @foreach($agencies as $agency)
+                        {{--Kijkt of variabele gelijk is aan id, zo ja zet die op selected in de dropdown, zo niet doet die niets--}}
                         <option value="{{$agency->id}}" {{$agencyId == $agency->id ? 'selected' : ''}}>
                             {{$agency->name}}
                         </option>
