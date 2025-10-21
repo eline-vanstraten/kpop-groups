@@ -1,7 +1,8 @@
 <x-app-layout>
     <h1>Groups</h1>
-    <a href="{{route('groups.create')}}">Create</a>
-
+    @auth
+        <a href="{{route('groups.create')}}">Create</a>
+    @endauth
     <div>
         <form action="{{route('groups.index')}}" method="GET">
             <div>

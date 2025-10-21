@@ -1,5 +1,14 @@
 # Changelog
 
+## 21/10/25
+
+Ik heb de navigatie balk zo aangepast dat je login en register alleen ziet als je niet ingelogd bent en dat je
+favorieten en log out ziet als je wel ingelogd bent. <br>
+Ook heb ik ervoor gezorgd dat wanneer je een groep toevoegd en een veld vergeet in te vullen al op sumbit drukt dat all
+je velden ingevuld blijven. <br>
+Daarnaast heb ik 'role' toegevoegd aan de user tabel. Elk aangemaakte account krijgt nu een rol aangewezen: admin of
+user. Nu ben je standaard een user.
+
 ## 20/10/25
 
 Ik heb een werkende zoekfunctie waar je de groepen op naam kan zoeken. <br>

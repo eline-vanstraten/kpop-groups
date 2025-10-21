@@ -19,10 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 
 
-//Route::get('groups/{id}', function (int $id) {
-//    return view('groups', compact('id'));
-//})->name('groups');
-
 Route::get('/homepage', function () {
     return view('homepage');
 })->name('homepage');
@@ -37,6 +33,5 @@ Route::get('/favorites', function () {
 
 Route::resource('groups', GroupController::class);
 
-//Route::resource('search', GroupController::class);
 
 require __DIR__ . '/auth.php';

@@ -8,15 +8,17 @@
     <p>{{$group->description}}</p>
     <img src="{{asset('storage/' . $group->image)}}" alt="{{$group->name}}">
     {{--    <p>{{$group->image}}</p>--}}
-    <div>
-        {{--        <a href="{{route('groups.destroy', $group->id)}}">Delete</a>--}}
-        <button form="delete-form">Delete</button>
-        <a href="{{ route('groups.edit', $group->id) }}">Edit</a>
-    </div>
+    @auth
+        <div>
+            {{--        <a href="{{route('groups.destroy', $group->id)}}">Delete</a>--}}
+            <button form="delete-form">Delete</button>
+            <a href="{{ route('groups.edit', $group->id) }}">Edit</a>
+        </div>
 
-    <form method="POST" action="{{route('groups.destroy', $group->id)}}" class="hidden" id="delete-form">
-        @csrf
-        @method('DELETE')
-    </form>
+        <form method="POST" action="{{route('groups.destroy', $group->id)}}" class="hidden" id="delete-form">
+            @csrf
+            @method('DELETE')
+        </form>
+    @endauth
 
 </x-app-layout>
