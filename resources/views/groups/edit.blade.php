@@ -2,7 +2,7 @@
     <h1>Edit group {{$group->name}}</h1>
     <form method="POST" action="{{route('groups.update', $group->id)}}" enctype="multipart/form-data">
         @csrf
-        @method('PUT')
+        @method('PATCH')
         <div>
             <label for="name">Name</label>
             <input type="text" id="name" name="name" value="{{$group->name}}">

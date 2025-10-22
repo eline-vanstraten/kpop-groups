@@ -83,7 +83,6 @@
             <button type="submit" id="submit" name="submit">
                 Submit
             </button>
-            {{--            <input type="submit" id="submit" name="submit">--}}
         </div>
     </form>
 </x-app-layout>

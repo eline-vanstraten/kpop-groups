@@ -1,5 +1,11 @@
 # Changelog
 
+## 22/10/25
+
+Ik heb alle pagina's afgestemd op wat wel en niet zichtbaar moet zijn als je gast bent of ingelogd bent. Daarnaast heb
+ik de user_id toegvoegd aan de groups table. Nu wordt elke nieuwe toegevoegde groep gekoppeld aan de gebruiker die het
+aanmaakt. Gebruikers kunnen hierdoor alleen hun eigen gemaakte groepen wijzigen en verwijderen.
+
 ## 21/10/25
 
 Ik heb de navigatie balk zo aangepast dat je login en register alleen ziet als je niet ingelogd bent en dat je

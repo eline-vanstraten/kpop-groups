@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Agency;
 use App\Models\Group;
 use App\Models\Type;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use function Pest\Laravel\delete;
 
 class GroupController extends Controller
@@ -57,6 +60,7 @@ class GroupController extends Controller
 
         $types = Type::all();
         $agencies = Agency::all();
+
         return view('groups.create', compact('types', 'agencies'));
     }
 
@@ -88,11 +92,13 @@ class GroupController extends Controller
         $group->number_of_members = $request->input('number_of_members');
         $group->name_of_members = $request->input('name_of_members');
         $group->description = $request->input('description');
-//        $group->image = $request->input('image');
 
 
         $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
         $group->image = $nameOfFile; //to store the link to the image in the DB
+
+        //zet de user id op de ingelogde user
+        $group->user_id = Auth::id();
 
         $group->save();
 
@@ -116,9 +122,9 @@ class GroupController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Group $group)
     {
-        $group = Group::find($id);
+
         $types = Type::all();
         $agencies = Agency::all();
         return view('groups.edit', compact('group', 'types', 'agencies'));
@@ -127,7 +133,7 @@ class GroupController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Group $group)
     {
         $request->validate([
             'name' => ['required', 'string'],
@@ -140,7 +146,6 @@ class GroupController extends Controller
             'image' => ['required', 'image'],
         ]);
 
-        $group = Group::findOrFail($id);
 
         $group->name = $request->input('name');
         $group->type_id = $request->input('type_id');
@@ -149,7 +154,7 @@ class GroupController extends Controller
         $group->number_of_members = $request->input('number_of_members');
         $group->name_of_members = $request->input('name_of_members');
         $group->description = $request->input('description');
-//        $group->image = $request->input('image');
+
 
         $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
         $group->image = $nameOfFile; //to store the link to the image in the DB
@@ -162,12 +167,12 @@ class GroupController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Group $group)
     {
-        $group = Group::findOrFail($id);
+
         $group->delete();
 
-        return redirect()->route('groups.index', compact('group'))->with('success', 'Group Deleted');
+        return redirect()->route('groups.index')->with('success', 'Group Deleted');
 
     }
 

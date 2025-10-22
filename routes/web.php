@@ -31,7 +31,33 @@ Route::get('/favorites', function () {
     return view('favorites');
 })->name('favorites');
 
-Route::resource('groups', GroupController::class);
+
+Route::get('/groups', [GroupController::class, 'index'])->name('groups.index');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/groups/create', [GroupController::class, 'create'])
+        ->name('groups.create');
+
+    Route::post('/groups', [GroupController::class, 'store'])
+        ->name('groups.store');
+
+    Route::get('/groups/{group}/edit', [GroupController::class, 'edit'])
+        ->can('edit-group', 'group')
+        ->name('groups.edit');
+
+    Route::patch('/groups/{group}', [GroupController::class, 'update'])
+        ->can('edit-group', 'group')
+        ->name('groups.update');
+
+    Route::delete('/groups/{group}', [GroupController::class, 'destroy'])
+        ->can('edit-group', 'group')
+        ->name('groups.destroy');
+});
+
+Route::get('/groups/{group}', [GroupController::class, 'show'])->name('groups.show');
+
+
+//Route::resource('groups', GroupController::class);
 
 
 require __DIR__ . '/auth.php';

@@ -9,11 +9,13 @@
     <img src="{{asset('storage/' . $group->image)}}" alt="{{$group->name}}">
     {{--    <p>{{$group->image}}</p>--}}
     @auth
-        <div>
-            {{--        <a href="{{route('groups.destroy', $group->id)}}">Delete</a>--}}
-            <button form="delete-form">Delete</button>
-            <a href="{{ route('groups.edit', $group->id) }}">Edit</a>
-        </div>
+        @can('edit-group', $group)
+            <div>
+                <button form="delete-form">Delete</button>
+                <a href="{{ route('groups.edit', $group->id) }}">Edit</a>
+            </div>
+        @endcan
+
 
         <form method="POST" action="{{route('groups.destroy', $group->id)}}" class="hidden" id="delete-form">
             @csrf
