@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -19,9 +19,9 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/homepage', function () {
-    return view('homepage');
-})->name('homepage');
+//Route::get('/homepage', function () {
+//    return view('homepage');
+//})->name('homepage');
 
 Route::get('/status', function () {
     return view('status');

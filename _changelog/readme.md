@@ -1,5 +1,10 @@
 # Changelog
 
+## 23/10/25
+
+Vandaag ben ik bezig geweest met de eerste layout van de site. Ik heb de layout gezet voor de navigatie balk, de
+overzicht pagina van de groepen en de homepage.
+
 ## 22/10/25
 
 Ik heb alle pagina's afgestemd op wat wel en niet zichtbaar moet zijn als je gast bent of ingelogd bent. Daarnaast heb

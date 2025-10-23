@@ -1,4 +1,5 @@
 <x-app-layout>
+    <div class="max-w-5xl mx-auto p-6"></div>
     <h1> {{ $group->name }}</h1>
     <p>{{$group->type->type}}</p>
     <p>{{$group->agency->name}}</p>
