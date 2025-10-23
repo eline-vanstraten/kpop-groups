@@ -5,7 +5,8 @@
 Vandaag ben ik bezig geweest met de eerste layout van de site. Ik heb de layout gezet voor de navigatie balk, de
 overzicht pagina van de groepen en de homepage.<br>
 Ook heb ik ervoor gezorgd dat wanneer de admin inlogd deze terecht komt op de dashboard pagina. Wanneer een gebruiker
-inlogd komt deze op de welkom/home pagina. De user kan niet meer op de dashboard pagina komen.
+inlogd komt deze op de welkom/home pagina. De user kan niet meer op de dashboard pagina komen. <br>
+Daarnaa heb ik een layout gegeven aan mijn detail, edit en create pagina.
 
 ## 22/10/25
 
