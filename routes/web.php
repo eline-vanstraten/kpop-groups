@@ -4,13 +4,15 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified', 'can:access-dashboard'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -23,9 +25,6 @@ Route::middleware('auth')->group(function () {
 //    return view('homepage');
 //})->name('homepage');
 
-Route::get('/status', function () {
-    return view('status');
-})->name('status');
 
 Route::get('/favorites', function () {
     return view('favorites');

@@ -10,7 +10,7 @@
                 <form action="{{route('groups.index')}}" method="GET"
                       class="flex flex-wrap gap-4 mb-8 bg-white p-4 rounded-lg shadow-sm">
                     <div class="flex-grow">
-                        <label for="search" class="visually-hidden">Search term</label>
+                        <label for="search" class="visually-hidden"></label>
                         <input type="text" name="search" id="search" value="{{request('search')}}"
                                class="form-control rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500"
                                placeholder="Search groups...">

@@ -29,5 +29,9 @@ class AppServiceProvider extends ServiceProvider
             return $group->user->is($user);
         });
 
+        Gate::define('access-dashboard', function ($user) {
+            return $user->role === 'admin';
+        });
+
     }
 }
