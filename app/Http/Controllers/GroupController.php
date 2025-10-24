@@ -23,7 +23,9 @@ class GroupController extends Controller
         $agencyId = $request->input('agency_id');
         $typeId = $request->input('type_id');
 
-        $query = Group::query();
+//        $query = Group::query();
+        $query = Group::where('active', true);
+
 
         if ($search !== '') {
             //% zorgt ervoor dat wanneer er tekst voor of na het woord staat het woord wel getoond wordt
@@ -110,7 +112,9 @@ class GroupController extends Controller
      */
     public function show(string $id)
     {
-        $group = Group::find($id);
+//        $group = Group::find($id);
+        $group = Group::where('id', $id)->where('active', true)->firstOrFail();
+
         return view('groups.show', compact('group'));
     }
 

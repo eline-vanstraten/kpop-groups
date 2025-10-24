@@ -1,12 +1,18 @@
 # Changelog
 
+## 24/10/25
+
+Vandaag ben ik met het admin dashboard aan de slag gegaan. De admin kan nu ervoor kiezen om groepen wel of niet op de
+site te laten zien. Ook kan die elke groep editen en verwijderen waar nodig. Alleen de admin kan op de pagina's van het
+dashboard komen. Ook heb ik deze pagina een layout gegeven.
+
 ## 23/10/25
 
 Vandaag ben ik bezig geweest met de eerste layout van de site. Ik heb de layout gezet voor de navigatie balk, de
 overzicht pagina van de groepen en de homepage.<br>
 Ook heb ik ervoor gezorgd dat wanneer de admin inlogd deze terecht komt op de dashboard pagina. Wanneer een gebruiker
 inlogd komt deze op de welkom/home pagina. De user kan niet meer op de dashboard pagina komen. <br>
-Daarnaa heb ik een layout gegeven aan mijn detail, edit en create pagina.
+Daarna heb ik een layout gegeven aan mijn show(detail), edit en create pagina.
 
 ## 22/10/25
 

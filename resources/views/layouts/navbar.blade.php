@@ -10,6 +10,12 @@
                 @auth
                     <x-menu-link href="{{ route('favorites') }}" :active="Route::is('favorites')">Favorites
                     </x-menu-link>
+                    @can('access-dashboard')
+                        <x-menu-link href="{{ route('dashboard') }}" :active="Route::is('dashboard')">Dashboard
+                        </x-menu-link>
+                    @endcan
+
+
             </div>
 
             <div class="flex space-x-4 items-center">

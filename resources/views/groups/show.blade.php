@@ -1,17 +1,15 @@
 <x-app-layout>
     <div class="max-w-7xl mx-auto p-6">
         <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
-            {{--            <div class="max-w-5xl mx-auto p-6"></div>--}}
             <div class="flex-1 space-y-3">
                 <h1 class="text-3xl font-bold"> {{ $group->name }}</h1>
                 <p class="text-gray-600"><strong>Type:</strong> {{$group->type->type}}</p>
                 <p class="text-gray-600"><strong>Agency:</strong> {{$group->agency->name}}</p>
                 <p class="text-gray-600"><strong>Debut date:</strong> {{$group->debut_date}}</p>
                 <p class="text-gray-600"><strong>Number of members:</strong> {{$group->number_of_members}}</p>
-                <p class="text-gray-600"><strong>Name of members:</strong>: {{$group->name_of_members}}</p>
+                <p class="text-gray-600"><strong>Name of members:</strong> {{$group->name_of_members}}</p>
                 <p class="text-gray-600">{{$group->description}}</p>
 
-                {{--    <p>{{$group->image}}</p>--}}
                 @auth
                     @can('edit-group', $group)
                         <div class="mt-4 flex gap-11">

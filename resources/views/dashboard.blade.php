@@ -1,16 +1,15 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Dashboard
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
+    <div class="container mx-auto py-10">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Admin dashboard</h1>
+        
+        <div class="py-12 flex justify-center">
+            <div class="max-w-md w-full">
+                <a href="{{ route('admin.groups.index') }}"
+                   class="block bg-blue-500 hover:bg-blue-600 transition-shadow shadow-md hover:shadow-lg rounded-lg p-6 text-center text-white">
+                    <div class="text-2xl font-bold">
+                        K-Pop Groups overview
+                    </div>
+                </a>
             </div>
         </div>
     </div>

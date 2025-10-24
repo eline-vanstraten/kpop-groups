@@ -71,8 +71,8 @@
 
             <div class="flex flex-col mb-6">
                 <label for="description" class="mb-1 font-medium">Description</label>
-                <input type="text" id="description" name="description" value="{{old('description')}}"
-                       class="border rounded p-2">
+                <textarea type="text" id="description" name="description" rows="5"
+                          class="border rounded p-2"> {{old('description')}} </textarea>
             </div>
             @error('description')
             <div class="text-red-500 text-sm mt-1 italic">

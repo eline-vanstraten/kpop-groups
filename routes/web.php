@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -12,6 +13,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'can:access-dashboard'])->name('dashboard');
+
+Route::get('/admin/groups', [AdminController::class, 'index'])
+    ->middleware(['auth', 'can:access-dashboard'])
+    ->name('admin.groups.index');
+
+
+Route::patch('/admin/groups/{group}/status', [AdminController::class, 'status'])
+    ->middleware(['auth', 'can:access-dashboard'])
+    ->name('admin.groups.status');
 
 
 Route::middleware('auth')->group(function () {
