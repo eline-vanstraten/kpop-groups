@@ -6,7 +6,8 @@ Vandaag heb ik ervoor gezorgd dat wanneer de admin een groep niet meer op actief
 kan. Alleen de admin kan altijd wijzigen en verwijderen maar de gebruikers kunnen nu wanneer hun groep niet op actief
 staat deze niet meer wijzigen of verwijderen. <br>
 Ook heb ik nog aan registerdUserController en User.php de role toegevoegd zodat dit goed meegenomen wordt bij controle
-en het inloggen.
+en het inloggen.<br>
+Daarnaast heb ik ervoor gezorgd dat mijn welcome page af is.
 
 ## 24/10/25
 
