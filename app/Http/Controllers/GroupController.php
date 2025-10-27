@@ -112,6 +112,12 @@ class GroupController extends Controller
      */
     public function show(string $id)
     {
+
+//        if (auth()->user()->isAdmin()) {
+//            return view('groups.show');
+//
+//        };
+
 //        $group = Group::find($id);
         $group = Group::where('id', $id)->where('active', true)->firstOrFail();
 
@@ -131,6 +137,8 @@ class GroupController extends Controller
 
         $types = Type::all();
         $agencies = Agency::all();
+
+
         return view('groups.edit', compact('group', 'types', 'agencies'));
     }
 
@@ -139,6 +147,7 @@ class GroupController extends Controller
      */
     public function update(Request $request, Group $group)
     {
+
         $request->validate([
             'name' => ['required', 'string'],
             'type_id' => ['required', 'exists:types,id'],

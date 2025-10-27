@@ -25,8 +25,13 @@ class AppServiceProvider extends ServiceProvider
         //maakt een nieuw onderdeel aan voor waar een gebruiker toegang kan hebben.
         //Gebruikt de user die ingelogd is en kijkt naar de groep waarvan je iets wil doen.
         Gate::define('edit-group', function (User $user, Group $group) {
+
+            //admin kan altijd wijzigen en verwijderen, gebruiker alleen als de group op actief staat
+            if ($user->role === 'admin') {
+                return true;
+            }
             //je hebt toegang tot het bewerken van de groep zodra de user die ingelogd is hetzelfde is als degene die de group heeft aangemaakt.
-            return $group->user->is($user) || $user->role === 'admin';
+            return $group->user->is($user) && $group->active;
         });
 
         Gate::define('access-dashboard', function ($user) {

@@ -18,7 +18,6 @@
                 <label for="type_id" class="mb-1 font-medium">Group type</label>
                 <select name="type_id" class="border rounded p-2">
                     @foreach($types as $type)
-                        {
                         <option
                             value="{{$type->id}}" {{old('type_id') == $type->id ? 'selected' : ''}}>{{$type->type}} </option>
                     @endforeach
@@ -29,7 +28,6 @@
                 <label for="agency_id" class="mb-1 font-medium">Agency</label>
                 <select name="agency_id" class="border rounded p-2">
                     @foreach($agencies as $agency)
-                        {
                         <option
                             value="{{$agency->id}}" {{old('agency_id') == $agency->id ? 'selected' : ''}}>{{$agency->name}}</option>
                     @endforeach

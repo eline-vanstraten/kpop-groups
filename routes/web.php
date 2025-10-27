@@ -31,11 +31,6 @@ Route::middleware('auth')->group(function () {
 });
 
 
-//Route::get('/homepage', function () {
-//    return view('homepage');
-//})->name('homepage');
-
-
 Route::get('/favorites', function () {
     return view('favorites');
 })->name('favorites');

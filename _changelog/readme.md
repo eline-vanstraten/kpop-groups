@@ -1,5 +1,13 @@
 # Changelog
 
+## 27/10/25
+
+Vandaag heb ik ervoor gezorgd dat wanneer de admin een groep niet meer op actief zet dat je er ook hardcoded niet bij
+kan. Alleen de admin kan altijd wijzigen en verwijderen maar de gebruikers kunnen nu wanneer hun groep niet op actief
+staat deze niet meer wijzigen of verwijderen. <br>
+Ook heb ik nog aan registerdUserController en User.php de role toegevoegd zodat dit goed meegenomen wordt bij controle
+en het inloggen.
+
 ## 24/10/25
 
 Vandaag ben ik met het admin dashboard aan de slag gegaan. De admin kan nu ervoor kiezen om groepen wel of niet op de

@@ -18,10 +18,14 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+
+
+    //role toevoegen
     protected $fillable = [
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -51,4 +55,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Group::class);
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
 }
+
+
