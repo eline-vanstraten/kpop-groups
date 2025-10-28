@@ -6,7 +6,10 @@ Vandaag heb ik de profiel pagina toegevoegd. Hier stond al de optie van het wijz
 toegevoegd dat je daar de groepen kan zien die je als gebruiker zelf hebt aangemaakt. <br>
 Daarnaast heb ik ervoor gezorgd dat als je een groep gaat bewerken dat je niet elke keer weer opnieuw een foto moet
 toevoegen. Nu veranderd die de foto in de database als je een nieuwe toevoegd en als je niks veranderd bewaart die
-gewoon de foto die je al had toegevoegd.
+gewoon de foto die je al had toegevoegd.<br>
+Ook ben ik begonnen aan diepere validatie toepassen. Ik ben bezig met ervoor zorgen dat je pas na 3 keer inloggen een
+nieuwe groep kan aanmaken. Dit werkte niet. Ik heb daardoor geprobeerd op een andere plek deze validatie toe te voegen.
+Nu heb ik dat je een group pas kan editten als je minimaal 3 groepen zelf heb aangemaakt. Dit werkt wel.
 
 ## 27/10/25
 

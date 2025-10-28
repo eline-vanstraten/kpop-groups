@@ -15,6 +15,11 @@
                         <div class="mt-4 flex gap-11">
                             <a href="{{ route('groups.edit', $group->id) }}"
                                class="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition">Edit</a>
+                            @if($errors->has('create-check'))
+                                <div class="text-red-500 text-sm mt-1 italic">
+                                    {{ $errors->first('create-check') }}
+                                </div>
+                            @endif
                             <button form="delete-form"
                                     class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition">Delete
                             </button>

@@ -8,6 +8,7 @@ use App\Models\Type;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use function Pest\Laravel\delete;
 
@@ -57,8 +58,19 @@ class GroupController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Group $group)
     {
+
+        //kijkt in de session table wanneer de user_id inlogd. Dit wordt geteld door count
+//        $counter = DB::table('sessions')->
+//        where('user_id', Auth::id())->
+//        count();
+
+        //wanneer de user nog minder dan 3 keer ingelogd heeft blijft die op de index pagina en krijg een error.
+//        if ($counter < 3) {
+//            return redirect()->route('groups.index')->withErrors(['login-check' => 'You must log in at least 3 times before you can create a group.']);
+//        }
+
 
         $types = Type::all();
         $agencies = Agency::all();
@@ -139,6 +151,16 @@ class GroupController extends Controller
         $agencies = Agency::all();
 
 
+        $createGroups = DB::table('groups')
+            ->where('user_id', Auth::id())
+            ->count();
+        
+        if ($createGroups < 3) {
+            return redirect()->route('groups.show', compact('group'))->withErrors(['create-check' => 'You must create at least 3 groups before you can edit a group.']);
+
+        }
+
+
         return view('groups.edit', compact('group', 'types', 'agencies'));
     }
 
@@ -181,7 +203,7 @@ class GroupController extends Controller
 //
 //        $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
 //        $group->image = $nameOfFile; //to store the link to the image in the DB
-        
+
         $group->save();
         return redirect()->route('groups.show', $group->id)->with('success', 'Group Updated');
 
