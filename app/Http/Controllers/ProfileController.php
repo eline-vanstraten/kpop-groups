@@ -3,22 +3,47 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Agency;
+use App\Models\Group;
+use App\Models\Type;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use function Pest\Laravel\get;
 
 class ProfileController extends Controller
 {
+
     /**
      * Display the user's profile form.
      */
     public function edit(Request $request): View
     {
+
+        $user = $request->user();
+
+        $agencyId = $request->input('agency_id');
+        $typeId = $request->input('type_id');
+
+//        $query = Group::query();
+        $groups = Group::where('active', true)
+            ->where('user_id', $user->id)
+            ->get();
+
+
+//        $groups = $query->get();
+
+        $agencies = Agency::all();
+        $types = Type::all();
+
+
+//        return view('profile.edit', compact('groups', 'agencies', 'agencyId', 'types', 'typeId'));
+
         return view('profile.edit', [
             'user' => $request->user(),
-        ]);
+        ], compact('groups', 'agencies', 'agencyId', 'types', 'typeId'));
     }
 
     /**
@@ -57,4 +82,6 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+
 }

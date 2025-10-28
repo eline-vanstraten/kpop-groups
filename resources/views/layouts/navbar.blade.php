@@ -19,6 +19,8 @@
             </div>
 
             <div class="flex space-x-4 items-center">
+                <x-menu-link href="{{ route('profile.edit') }}" :active="Route::is('profile.edit')">Profile
+                </x-menu-link>
 
                 <form method="POST" action="{{route('logout')}}">
                     @csrf

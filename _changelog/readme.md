@@ -1,5 +1,13 @@
 # Changelog
 
+## 28/10/25
+
+Vandaag heb ik de profiel pagina toegevoegd. Hier stond al de optie van het wijzigen van informatie op. Ik heb
+toegevoegd dat je daar de groepen kan zien die je als gebruiker zelf hebt aangemaakt. <br>
+Daarnaast heb ik ervoor gezorgd dat als je een groep gaat bewerken dat je niet elke keer weer opnieuw een foto moet
+toevoegen. Nu veranderd die de foto in de database als je een nieuwe toevoegd en als je niks veranderd bewaart die
+gewoon de foto die je al had toegevoegd.
+
 ## 27/10/25
 
 Vandaag heb ik ervoor gezorgd dat wanneer de admin een groep niet meer op actief zet dat je er ook hardcoded niet bij

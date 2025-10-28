@@ -156,7 +156,7 @@ class GroupController extends Controller
             'number_of_members' => ['required', 'integer'],
             'name_of_members' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'image' => ['required', 'image'],
+            'image' => ['nullable', 'image'],
         ]);
 
 
@@ -168,10 +168,20 @@ class GroupController extends Controller
         $group->name_of_members = $request->input('name_of_members');
         $group->description = $request->input('description');
 
+        //foto verwijderd uit database als nieuwe foto word toegevoegd. Zo niet blijft oude foto bewaard
+        if ($request->hasFile('image')) {
+            if ($group->image && \Storage::disk('public')->exists($group->image)) {
+                \Storage::disk('public')->delete($group->image);
+            }
 
-        $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
-        $group->image = $nameOfFile; //to store the link to the image in the DB
+            $group['image'] = $request->file('image')->store('groups', 'public');
+        }
 
+
+//
+//        $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
+//        $group->image = $nameOfFile; //to store the link to the image in the DB
+        
         $group->save();
         return redirect()->route('groups.show', $group->id)->with('success', 'Group Updated');
 

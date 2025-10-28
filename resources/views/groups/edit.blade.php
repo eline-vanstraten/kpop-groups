@@ -89,10 +89,18 @@
             </div>
             @enderror
 
+            @if($group->image)
+                <div class="mb-6">
+                    <label for="image" class="mb-1 font-medium">Current Image</label>
+                    <img src="{{asset('storage/' . $group->image)}}" alt="Current image"
+                         class="w-32 h-32 object-cover rounded">
+                </div>
+
+            @endif
             <div class="mb-6">
-                <label for="image" class="mb-1 font-medium">Image</label>
-                <input type="file" id="image" name="image" value="{{$group->image}}" accept="image/"
-                       class="border rounded p-2">
+                <label for="image" class="mb-1 font-medium"> Change Image</label>
+                <input type="file" id="image" name="image" accept="image/"
+                >
             </div>
             @error('image')
             <div class="text-red-500 text-sm mt-1 italic">
