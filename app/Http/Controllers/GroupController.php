@@ -154,9 +154,9 @@ class GroupController extends Controller
         $createGroups = DB::table('groups')
             ->where('user_id', Auth::id())
             ->count();
-        
+
         if ($createGroups < 3) {
-            return redirect()->route('groups.show', compact('group'))->withErrors(['create-check' => 'You must create at least 3 groups before you can edit a group.']);
+            return redirect()->route('groups.show', compact('group'))->withErrors(['create-check' => 'You must create at least 3 groups before you can edit this group.']);
 
         }
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 29/10/25
+
+Vandaag heb ik ervoor gezorgd dat een gebruiker zijn account kan verwijderen en alle groepen die daarbij horen.
+
 ## 28/10/25
 
 Vandaag heb ik de profiel pagina toegevoegd. Hier stond al de optie van het wijzigen van informatie op. Ik heb
