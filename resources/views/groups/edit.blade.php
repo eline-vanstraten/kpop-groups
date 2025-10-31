@@ -35,11 +35,7 @@
                 <select name="agency_id" id="agency_id" class="border rounded p-2">
                     @foreach($agencies as $agency)
                         <option
-                            {{--zet id van voorheen gekozen type neer --}}
                             value="{{$agency->id}}"
-                            {{--checkt of de gekozen type_id in group tabel gelijk is aan de id van de type tabel.
-                            Waar--> de geselecteerde wordt laten zien dus die al voorheen gekozen is
-                            Niet waar--> de standaard optie word laten zien--}}
                             {{$group->agency_id == $agency->id ? 'selected' : ''}}>{{$agency->name}}</option>
                     @endforeach
                 </select>

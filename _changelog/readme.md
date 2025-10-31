@@ -1,5 +1,10 @@
 # Changelog
 
+## 31/10/25
+
+Vandaag heb ik er nog voor gezorgd dat alle overbodige en niet nodige code niet meer in mijn code staat. Daarnaast heb
+ik gecheckt of alles wat er in moet zitten in mijn project zit en alle laatste beveiliging dingen gecheckt.
+
 ## 29/10/25
 
 Vandaag heb ik ervoor gezorgd dat een gebruiker zijn account kan verwijderen en alle groepen die daarbij horen.

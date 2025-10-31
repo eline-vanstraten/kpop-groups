@@ -27,19 +27,14 @@ class ProfileController extends Controller
         $agencyId = $request->input('agency_id');
         $typeId = $request->input('type_id');
 
-//        $query = Group::query();
         $groups = Group::where('active', true)
             ->where('user_id', $user->id)
             ->get();
 
 
-//        $groups = $query->get();
-
         $agencies = Agency::all();
         $types = Type::all();
 
-
-//        return view('profile.edit', compact('groups', 'agencies', 'agencyId', 'types', 'typeId'));
 
         return view('profile.edit', [
             'user' => $request->user(),

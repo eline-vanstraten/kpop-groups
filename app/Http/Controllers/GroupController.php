@@ -24,7 +24,6 @@ class GroupController extends Controller
         $agencyId = $request->input('agency_id');
         $typeId = $request->input('type_id');
 
-//        $query = Group::query();
         $query = Group::where('active', true);
 
 
@@ -41,16 +40,11 @@ class GroupController extends Controller
             $query->where('type_id', $typeId);;
         }
 
-
         $groups = $query->get();
 
         $agencies = Agency::all();
         $types = Type::all();
 
-
-//        $groups = Group::all();
-
-//        dd($groups);
 
         return view('groups.index', compact('groups', 'search', 'agencies', 'agencyId', 'types', 'typeId'));
     }
@@ -58,18 +52,8 @@ class GroupController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Group $group)
+    public function create()
     {
-
-        //kijkt in de session table wanneer de user_id inlogd. Dit wordt geteld door count
-//        $counter = DB::table('sessions')->
-//        where('user_id', Auth::id())->
-//        count();
-
-        //wanneer de user nog minder dan 3 keer ingelogd heeft blijft die op de index pagina en krijg een error.
-//        if ($counter < 3) {
-//            return redirect()->route('groups.index')->withErrors(['login-check' => 'You must log in at least 3 times before you can create a group.']);
-//        }
 
 
         $types = Type::all();
@@ -130,16 +114,11 @@ class GroupController extends Controller
 //
 //        };
 
-//        $group = Group::find($id);
         $group = Group::where('id', $id)->where('active', true)->firstOrFail();
 
         return view('groups.show', compact('group'));
     }
 
-//    public function show(Group $group)
-//    {
-//
-//    }
 
     /**
      * Show the form for editing the specified resource.
@@ -198,11 +177,6 @@ class GroupController extends Controller
 
             $group['image'] = $request->file('image')->store('groups', 'public');
         }
-
-
-//
-//        $nameOfFile = $request->file('image')->storePublicly('folder-name', 'public');
-//        $group->image = $nameOfFile; //to store the link to the image in the DB
 
         $group->save();
         return redirect()->route('groups.show', $group->id)->with('success', 'Group Updated');

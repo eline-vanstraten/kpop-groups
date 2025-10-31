@@ -31,11 +31,6 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/favorites', function () {
-    return view('favorites');
-})->name('favorites');
-
-
 Route::get('/groups', [GroupController::class, 'index'])->name('groups.index');
 
 Route::middleware('auth')->group(function () {
@@ -59,9 +54,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/groups/{group}', [GroupController::class, 'show'])->name('groups.show');
-
-
-//Route::resource('groups', GroupController::class);
 
 
 require __DIR__ . '/auth.php';
