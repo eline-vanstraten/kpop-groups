@@ -3,7 +3,7 @@
 Een webapplicatie gebouwd met het Laravel MVC-framework. De applicatie biedt een overzichtelijk manier om K-pop groepen
 te bekijken en te beheren.
 
-## Technologieën
+# Technologieën
 
 - Laravel (MVC Framework)
 - Laravel Breeze (authenticatie)
@@ -14,7 +14,7 @@ te bekijken en te beheren.
 - Tailwind CSS
 - Git en Github
 
-## ✦ Functies
+# ✦ Functies
 
 - Groepen bekijken
 - Nieuwe groepen toevoegen, bewerken en verwijderen
@@ -22,7 +22,7 @@ te bekijken en te beheren.
 - Zoeken en filteren op groep type en/of entertainment bedrijf
 - Admin (groepen (in)actief zetten)
 
-## Architectuur
+# Architectuur
 
 De applicatie is gebouwd volgens het MVC-patroon:
 
@@ -30,14 +30,14 @@ De applicatie is gebouwd volgens het MVC-patroon:
 - Views
 - Controllers
 
-## Beveiliging
+# Beveiliging
 
 Tijdens de ontwikkeling is rekening gehouden met:
 
 - OWASP-richtlijnen
 - OTAP-omgeving
 
-## ✦ Installatie en gebruik
+# Installatie en gebruik
 
 1. Clone de repository:
 
