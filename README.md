@@ -14,7 +14,7 @@ te bekijken en te beheren.
 - Tailwind CSS
 - Git en Github
 
-# ✦ Functies
+# Functies
 
 - Groepen bekijken
 - Nieuwe groepen toevoegen, bewerken en verwijderen
